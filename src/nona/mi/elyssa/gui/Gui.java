@@ -1,5 +1,7 @@
 package nona.mi.elyssa.gui;
 
+import nona.mi.elyssa.robot.Bot;
+
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -23,16 +25,29 @@ public class Gui{
     private JTextField timeField;
 
     private JPanel keyPanel;
-    private JLabel keyLabel;
-    private JTextField keyField;
+    private JRadioButton breedRadio;
+    private JRadioButton sweetRadio;
+    private ButtonGroup buttonGroup;
+
+    private JPanel tipPanel;
+    private JLabel tipLabel;
 
     private JPanel buttonPanel;
     private JButton check;
 
+    private String title;
+    private String breedingTipText;
+    private String sweetTipText;
+
     public Gui(){
 
-        jframe = new JFrame("Elyssa2.0");
-        jframe.setSize(500, 175);
+        title = "Elyssa 2.0 ";
+
+        breedingTipText = "Please set L as DOWN key.";
+        sweetTipText = "Please set Z as ACTION key";
+
+        jframe = new JFrame(title);
+        jframe.setSize(500, 200);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
@@ -66,18 +81,44 @@ public class Gui{
         mainPanel.add(timePanel);
 
         keyPanel = new JPanel();
-        keyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         keyPanel.setBackground(Color.PINK);
 
-        keyLabel = new JLabel("Key: ");
-        keyLabel.setForeground(Color.BLACK);
+        breedRadio = new JRadioButton("Breeding", true);
+        breedRadio.setBackground(Color.PINK);
+        breedRadio.setForeground(Color.BLACK);
+        breedRadio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tipLabel.setText(breedingTipText);
+            }
+        });
 
-        keyField = new JTextField(36);
-        keyField.setText("L");
+        sweetRadio = new JRadioButton("Sweet Scent / Legend", false);
+        sweetRadio.setBackground(Color.PINK);
+        sweetRadio.setForeground(Color.BLACK);
+        sweetRadio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tipLabel.setText(sweetTipText);
+            }
+        });
 
-        keyPanel.add(keyLabel);
-        keyPanel.add(keyField);
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(breedRadio);
+        buttonGroup.add(sweetRadio);
+
+        keyPanel.add(breedRadio);
+        keyPanel.add(sweetRadio);
         mainPanel.add(keyPanel);
+
+        tipPanel = new JPanel();
+        tipPanel.setBackground(Color.PINK);
+
+        tipLabel = new JLabel(breedingTipText);
+        tipLabel.setForeground(Color.BLACK);
+
+        tipPanel.add(tipLabel);
+        mainPanel.add(tipPanel);
 
         buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.PINK);
@@ -88,6 +129,7 @@ public class Gui{
         check.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
+                /*
                 Thread t = new Thread(new Runnable(){
                     @Override
                     public void run(){
@@ -95,12 +137,17 @@ public class Gui{
                     }
                 });
                 t.start();
+                 */
+                jframe.setTitle(title + "- RUNNING...");
+                manageInputs();
+                jframe.setTitle(title + "- DONE!");
             }
         });
         check.addKeyListener(new KeyListener(){
             @Override
             public void keyPressed(KeyEvent e){
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    /*
                     Thread t = new Thread(new Runnable(){
                         @Override
                         public void run(){
@@ -108,6 +155,10 @@ public class Gui{
                         }
                     });
                     t.start();
+                     */
+                    jframe.setTitle(title + "- RUNNING...");
+                    manageInputs();
+                    jframe.setTitle(title + "- DONE!");
                 }
             }
             @Override
@@ -132,6 +183,14 @@ public class Gui{
         String pathText = pathField.getText();
         String timeText = timeField.getText();
 
+        String key = "";
+        if (breedRadio.isSelected()) {
+            key = Bot.L_KEY;
+        } else {
+            key = Bot.Z_KEY;
+        }
+
+
         File file = new File(pathText);
 
         if (file.exists()) {
@@ -146,7 +205,7 @@ public class Gui{
                     Integer targetTime = Integer.parseInt(timeText);
 
                     if (targetTime > 0) {
-                        //new MyBot(file, targetTime);
+                        new Bot(file, targetTime, key);
                     }
 
                 } catch(Exception ex){
