@@ -93,7 +93,7 @@ public class Gui{
             }
         });
 
-        sweetRadio = new JRadioButton("Sweet Scent / Legend", false);
+        sweetRadio = new JRadioButton("Sweet Scent / Legend / IV", false);
         sweetRadio.setBackground(Color.PINK);
         sweetRadio.setForeground(Color.BLACK);
         sweetRadio.addActionListener(new ActionListener() {
@@ -129,15 +129,6 @@ public class Gui{
         check.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
-                /*
-                Thread t = new Thread(new Runnable(){
-                    @Override
-                    public void run(){
-                        manageInputs();
-                    }
-                });
-                t.start();
-                 */
                 jframe.setTitle(title + "- RUNNING...");
                 manageInputs();
                 jframe.setTitle(title + "- DONE!");
@@ -147,15 +138,6 @@ public class Gui{
             @Override
             public void keyPressed(KeyEvent e){
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    /*
-                    Thread t = new Thread(new Runnable(){
-                        @Override
-                        public void run(){
-                            manageInputs();
-                        }
-                    });
-                    t.start();
-                     */
                     jframe.setTitle(title + "- RUNNING...");
                     manageInputs();
                     jframe.setTitle(title + "- DONE!");

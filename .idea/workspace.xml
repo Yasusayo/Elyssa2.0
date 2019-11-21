@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Elyssa2.0:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="beb96ba8-1408-493f-8f5c-ebcc00b1c4ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/nona/mi/elyssa/robot/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Elyssa2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Elyssa2.0/nona/mi/elyssa/gui/Gui.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nona/mi/elyssa/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nona/mi/elyssa/gui/Gui.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,6 +37,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
