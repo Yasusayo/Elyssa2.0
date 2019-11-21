@@ -1,18 +1,12 @@
 package nona.mi.elyssa.gui;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import javax.swing.BoxLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
 import java.io.File;
 
 public class Gui{
@@ -28,19 +22,24 @@ public class Gui{
     private JLabel timeLabel;
     private JTextField timeField;
 
+    private JPanel keyPanel;
+    private JLabel keyLabel;
+    private JTextField keyField;
+
     private JPanel buttonPanel;
     private JButton check;
 
     public Gui(){
 
         jframe = new JFrame("Elyssa2.0");
-        jframe.setSize(500, 150);
+        jframe.setSize(500, 175);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
 
         mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setBackground(Color.PINK);
 
         pathPanel = new JPanel();
         pathPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -65,6 +64,20 @@ public class Gui{
         timePanel.add(timeLabel);
         timePanel.add(timeField);
         mainPanel.add(timePanel);
+
+        keyPanel = new JPanel();
+        keyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        keyPanel.setBackground(Color.PINK);
+
+        keyLabel = new JLabel("Key: ");
+        keyLabel.setForeground(Color.BLACK);
+
+        keyField = new JTextField(36);
+        keyField.setText("L");
+
+        keyPanel.add(keyLabel);
+        keyPanel.add(keyField);
+        mainPanel.add(keyPanel);
 
         buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.PINK);
