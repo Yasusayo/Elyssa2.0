@@ -44,7 +44,7 @@ public class Gui{
         title = "Elyssa 2.0 ";
 
         breedingTipText = "Please set L as DOWN key.";
-        sweetTipText = "Please set Z as ACTION key";
+        sweetTipText = "Please set Z as ACTION key.";
 
         jframe = new JFrame(title);
         jframe.setSize(500, 200);

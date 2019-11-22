@@ -26,7 +26,12 @@ public class Bot {
             bot.keyRelease(KeyEvent.VK_CONTROL);
             bot.keyRelease(KeyEvent.VK_R);
 
-            bot.delay(targetTime);
+            //bot.delay(targetTime);
+            try {
+                Thread.sleep(targetTime);
+            } catch (Exception ex) {
+
+            }
 
             if (key.equals(L_KEY)) {
                 bot.keyPress(KeyEvent.VK_L);
