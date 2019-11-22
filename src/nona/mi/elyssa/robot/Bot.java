@@ -1,5 +1,7 @@
 package nona.mi.elyssa.robot;
 
+import nona.mi.elyssa.gui.Gui;
+
 import java.awt.Desktop;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -10,7 +12,7 @@ public class Bot {
     public static final String L_KEY = "l";
     public static final String Z_KEY = "z";
 
-    public Bot(File path, int targetTime, String key){
+    public Bot(File path, int targetTime, String key, Gui gui){
 
         try {
             int resetDelay = 3000;
@@ -26,11 +28,18 @@ public class Bot {
             bot.keyRelease(KeyEvent.VK_CONTROL);
             bot.keyRelease(KeyEvent.VK_R);
 
-            //bot.delay(targetTime);
-            try {
-                Thread.sleep(targetTime);
-            } catch (Exception ex) {
+            boolean running = true;
+            double end = 0;
+            double delta = 0;
+            double ini = System.currentTimeMillis();
 
+            while (running) {
+                end = System.currentTimeMillis();
+                delta += end - ini;
+                ini = end;
+                if (delta >= targetTime) {
+                    running = false;
+                }
             }
 
             if (key.equals(L_KEY)) {

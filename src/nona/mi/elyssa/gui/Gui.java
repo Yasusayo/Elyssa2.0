@@ -39,9 +39,10 @@ public class Gui{
     private String breedingTipText;
     private String sweetTipText;
 
+
     public Gui(){
 
-        title = "Elyssa 2.0 ";
+        title = "Elyssa 2.1 ";
 
         breedingTipText = "Please set L as DOWN key.";
         sweetTipText = "Please set Z as ACTION key.";
@@ -187,7 +188,7 @@ public class Gui{
                     Integer targetTime = Integer.parseInt(timeText);
 
                     if (targetTime > 0) {
-                        new Bot(file, targetTime, key);
+                        new Bot(file, targetTime, key, this);
                     }
 
                 } catch(Exception ex){
