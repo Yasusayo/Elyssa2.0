@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beb96ba8-1408-493f-8f5c-ebcc00b1c4ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nona/mi/elyssa/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nona/mi/elyssa/gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nona/mi/elyssa/robot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/nona/mi/elyssa/robot/Bot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

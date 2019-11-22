@@ -188,7 +188,7 @@ public class Gui{
                     Integer targetTime = Integer.parseInt(timeText);
 
                     if (targetTime > 0) {
-                        new Bot(file, targetTime, key, this);
+                        new Bot(file, targetTime, key);
                     }
 
                 } catch(Exception ex){

@@ -12,7 +12,7 @@ public class Bot {
     public static final String L_KEY = "l";
     public static final String Z_KEY = "z";
 
-    public Bot(File path, int targetTime, String key, Gui gui){
+    public Bot(File path, int targetTime, String key){
 
         try {
             int resetDelay = 3000;
